@@ -73,6 +73,11 @@ $colors: (
 @import "ionic.theme.default";
 
 
+.nav-avatar {
+  width: 3.6rem;
+  border-radius: 100%;
+}
+
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:

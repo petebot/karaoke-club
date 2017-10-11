@@ -1,8 +1,33 @@
 <ion-header>
-  <ion-navbar>
+  <ion-menu [content]="content">
+
+    <ion-toolbar>
+      <ion-title>hellos?</ion-title>
+    </ion-toolbar>
+
+    <ion-content>
+      <ion-list>
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
+        <ion-item>Close Menu</ion-item>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+  <ion-navbar id="nav" #content swipeBackEnabled="false">
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
     <ion-title>
-      Contact
+      Club Feed
     </ion-title>
+
+
   </ion-navbar>
 </ion-header>
 

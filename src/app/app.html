@@ -1,1 +1,43 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu id="profileMenu" side="right" [content]="content">
+  <ion-content class="has-header">
+    <ion-toolbar>
+      <ion-title>profile</ion-title>
+    </ion-toolbar>
+    <ion-card *ngIf="userProfile">
+      <ion-card-header>
+        <ion-item>
+          <ion-avatar item-start>
+              <img [src]="userProfile.photoURL">
+          </ion-avatar>
+          <h2>{{ userProfile.displayName }}</h2>
+          <p>{{ userProfile.email }}</p>
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+      </ion-card-content>
+    </ion-card>
+    <ion-list>
+
+      <button menuClose ion-item *ngFor="let p of profilepages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-menu side="left" id="settingsMenu" [content]="content">
+
+  <ion-content class="has-header">
+    <ion-toolbar>
+      <ion-title>settings</ion-title>
+    </ion-toolbar>
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)" menuClose="left">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav id="nav" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

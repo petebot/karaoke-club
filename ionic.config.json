@@ -2,5 +2,7 @@
   "name": "karaoke-club",
   "app_id": "c118dfc6",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
